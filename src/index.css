@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@keyframes moveTrack {
+  from { background-position: 0 50%; }
+  to { background-position: -30px 50%; }
+}
+
+@keyframes snowFall {
+  0% { transform: translateY(-10vh) translateX(0); }
+  100% { transform: translateY(110vh) translateX(20px); }
+}
+
+.animate-snow {
+  animation: snowFall linear infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0; }
+}
+
+.animate-text-pulse {
+  animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes nosFlicker {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 0.9; }
+}
+
+.nos-flame {
+  background: radial-gradient(circle, #fef08a 0%, #f97316 70%, transparent 100%);
+  border-radius: 50%;
+  transform-origin: center;
+  animation: nosFlicker 0.08s infinite alternate;
+  filter: drop-shadow(0 0 2px #f97316);
+}
+
+.asphalt-bg {
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+@keyframes particleMove {
+  from { transform: translateX(100vw); }
+  to { transform: translateX(-100vw); }
+}
+
+.track-line {
+  background-image: linear-gradient(to right, #4b5563 40%, transparent 40%);
+  background-size: 30px 2px;
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  animation: moveTrack 0.15s linear infinite;
+}
+
+.particle-anim {
+  animation: particleMove linear infinite;
+}
+
+@keyframes carDrive {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+.car-driving {
+  animation: carDrive 2s ease-in-out infinite;
+}
+
+.finish-line {
+  background-image: 
+    linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000),
+    linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-color: #fff;
+}
+
+@keyframes pulseSize {
+  0%, 100% { transform: scale(0.8); }
+  50% { transform: scale(2.0); }
+}
+
+.animate-pulse-size {
+  animation: pulseSize 0.6s ease-in-out infinite;
+}
